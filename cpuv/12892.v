@@ -1,0 +1,10 @@
+module reg_e #(parameter WIDTH = 8)
+              (input  wire             clk,    
+               input  wire             reset,  
+               input  wire             rwe,    
+               input  wire [WIDTH-1:0] d,      
+               output reg  [WIDTH-1:0] q);     
+  always @(posedge clk, posedge reset)
+    if (reset) q <= 0;                 
+    else if (rwe) q <= d;              
+endmodule

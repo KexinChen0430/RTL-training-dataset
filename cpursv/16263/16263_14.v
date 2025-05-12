@@ -1,0 +1,46 @@
+
+module vita_pkt_gen(input  clk,
+                    input  reset,
+                    input  clear,
+                    input  [15:0] len,
+                    output [35:0] data_o,
+                    output src_rdy_o,
+                    input  dst_rdy_i);
+
+  reg  [15:0] state;
+  reg  [31:0] seq,data;
+  wire  sof = state == 0;
+  wire  eof = state == (len+(0-1));
+  wire  consume = dst_rdy_i & src_rdy_o;
+
+  assign src_rdy_o = 1;
+  
+  always @(posedge clk)
+      if (clear | reset) 
+        begin
+          state <= 0;
+          seq <= 0;
+        end
+      else if (consume) 
+        if (eof) 
+          begin
+            state <= 0;
+            seq <= 1+seq;
+          end
+        else state <= 1+state;
+        
+  
+  always @* 
+      case (state)
+
+        0: data <= {24'h000,seq[3:0],len};
+
+        1: data <= seq;
+
+        default: data <= {~state,state};
+
+      endcase
+
+  assign data_o = {2'b00,eof,sof,data};
+endmodule
+

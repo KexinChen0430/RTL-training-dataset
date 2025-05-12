@@ -1,0 +1,1 @@
+module objPixelOn(pixelNum, objPos, objSize, objMask, pixelOn);

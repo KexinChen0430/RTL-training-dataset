@@ -1,0 +1,20 @@
+
+module PREIO(PADIN,PADOUT,PADOEN,LATCHINPUTVALUE,CLOCKENABLE,INPUTCLK,
+             OUTPUTCLK,OUTPUTENABLE,DOUT1,DOUT0,DIN1,DIN0);
+
+  input  CLOCKENABLE;
+  output DIN0;
+  output DIN1;
+  input  DOUT0;
+  input  DOUT1;
+  input  INPUTCLK;
+  input  LATCHINPUTVALUE;
+  input  OUTPUTCLK;
+  input  OUTPUTENABLE;
+  input  PADIN;
+  output PADOEN;
+  output PADOUT;
+
+
+endmodule
+

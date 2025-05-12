@@ -1,0 +1,12 @@
+
+module bg_mid(clka,wea,addra,dina,douta);
+
+  input  clka;
+  input  wea;
+  input  [14:0] addra;
+  input  [11:0] dina;
+  output [11:0] douta;
+
+
+endmodule
+

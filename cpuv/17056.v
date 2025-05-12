@@ -1,0 +1,32 @@
+ff_icap_din_reversed[0]  <= icap_din[7];  
+ff_icap_din_reversed[1]  <= icap_din[6];  
+ff_icap_din_reversed[2]  <= icap_din[5];  
+ff_icap_din_reversed[3]  <= icap_din[4];  
+ff_icap_din_reversed[4]  <= icap_din[3];  
+ff_icap_din_reversed[5]  <= icap_din[2];  
+ff_icap_din_reversed[6]  <= icap_din[1];  
+ff_icap_din_reversed[7]  <= icap_din[0];  
+ff_icap_din_reversed[8]  <= icap_din[15]; 
+ff_icap_din_reversed[9]  <= icap_din[14]; 
+ff_icap_din_reversed[10] <= icap_din[13]; 
+ff_icap_din_reversed[11] <= icap_din[12]; 
+ff_icap_din_reversed[12] <= icap_din[11]; 
+ff_icap_din_reversed[13] <= icap_din[10]; 
+ff_icap_din_reversed[14] <= icap_din[9];  
+ff_icap_din_reversed[15] <= icap_din[8];  
+ff_icap_ce  <= icap_ce;  
+ff_icap_wr  <= icap_wr;  
+always@(posedge clock) begin
+   counter <= counter + 1'b1; 
+end
+assign led1 = 1'b1; 
+assign led2 = 1'b0; 
+assign led3 = 1'b0; 
+assign ld1 = counter[24];    
+assign ld2 = ~counter[24];   
+assign ld3 = 1'b0;           
+assign ld4 = state[4];       
+assign ld5 = state[3];       
+assign ld6 = state[2];       
+assign ld7 = state[1];       
+assign ld8 = state[0];       

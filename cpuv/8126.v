@@ -1,0 +1,33 @@
+module */ 
+output        sample_point; 
+output        sampled_bit; 
+output        sampled_bit_q; 
+output        tx_point; 
+output        hard_sync; 
+reg     [6:0] clk_cnt; 
+reg           clk_en; 
+reg           clk_en_q; 
+reg           sync_blocked; 
+reg           hard_sync_blocked; 
+reg           sampled_bit; 
+reg           sampled_bit_q; 
+reg     [4:0] quant_cnt; 
+reg     [3:0] delay; 
+reg           sync; 
+reg           seg1; 
+reg           seg2; 
+reg           resync_latched; 
+reg           sample_point; 
+reg     [1:0] sample; 
+reg           tx_point; 
+reg           tx_next_sp; 
+wire          go_sync; 
+wire          go_seg1; 
+wire          go_seg2; 
+wire [7:0]    preset_cnt; 
+wire          sync_window; 
+wire          resync; 
+assign preset_cnt = (baud_r_presc + 1'b1)<<1; 
+assign hard_sync  =   (rx_idle | rx_inter)    & (~rx) & sampled_bit & (~hard_sync_blocked); 
+assign resync     =  (~rx_idle) & (~rx_inter) & (~rx) & sampled_bit & (~sync_blocked); 
+endmodule 

@@ -1,0 +1,15 @@
+module sky130_fd_sc_hs__udp_dlatch$PSa_pp$sN (
+    Q           ,
+    D           ,
+    GATE        ,
+    SET_ASYNC   ,
+    SLEEP_B     ,
+    NOTIFIER_REG
+);
+    output Q           ;
+    input  D           ;
+    input  GATE        ;
+    input  SET_ASYNC   ;
+    input  SLEEP_B     ;
+    input  NOTIFIER_REG;
+endmodule

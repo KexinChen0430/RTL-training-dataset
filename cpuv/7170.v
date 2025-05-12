@@ -1,0 +1,22 @@
+module muddlib07__xor2_2x(a, b, y); 
+  input a; 
+  input b; 
+  output y; 
+  supply1 vdd; 
+  supply0 gnd; 
+  wire ab, bb, net_3, net_4, net_5, net_7, net_8; 
+  tranif1 nmos_0(gnd, net_3, a); 
+  tranif1 nmos_1(gnd, net_4, ab); 
+  tranif1 nmos_2(net_3, net_5, bb); 
+  tranif1 nmos_3(net_4, net_5, b); 
+  tranif1 nmos_4(gnd, bb, b); 
+  tranif1 nmos_5(gnd, ab, a); 
+  tranif1 nmos_6(gnd, y, net_5); 
+  tranif0 pmos_0(net_5, net_7, b); 
+  tranif0 pmos_1(net_7, vdd, a); 
+  tranif0 pmos_2(net_5, net_8, bb); 
+  tranif0 pmos_3(net_8, vdd, ab); 
+  tranif0 pmos_4(bb, vdd, b); 
+  tranif0 pmos_5(ab, vdd, a); 
+  tranif0 pmos_6(y, vdd, net_5); 
+endmodule 

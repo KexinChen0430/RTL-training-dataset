@@ -1,0 +1,39 @@
+
+module memory_dp(rd_data,wr_clk,wr_en,wr_addr,wr_data,rd_clk,rd_en,rd_addr);
+
+  parameter  AW = 14;
+  parameter  DW = 32;
+  parameter  WED = DW*(1/8);
+  parameter  MD = 1<<AW;
+  input  wr_clk;
+  input  [(0-1)+WED:0] wr_en;
+  input  [AW+(0-1):0] wr_addr;
+  input  [DW+(0-1):0] wr_data;
+  input  rd_clk;
+  input  rd_en;
+  input  [AW+(0-1):0] rd_addr;
+  output [DW+(0-1):0] rd_data;
+  reg  [DW+(0-1):0] ram[(0-1)+MD:0];
+  reg  [DW+(0-1):0] rd_data;
+
+  
+  always @(posedge rd_clk)
+      if (rd_en) rd_data[DW+(0-1):0] <= ram[rd_addr[AW+(0-1):0]];
+        
+  
+  generate
+      genvar i;
+      for (i = 0; i < WED; i = i+1)
+          begin : gen_ram
+            
+            always @(posedge wr_clk)
+                begin
+                  if (wr_en[i]) 
+                    ram[wr_addr[AW+(0-1):0]][(8*(i+1))+(0-1):i*8] <= wr_data[(8*(i+1))+(0-1):i*8];
+                    
+                end
+          end
+  endgenerate
+
+endmodule
+

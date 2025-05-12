@@ -1,0 +1,2 @@
+module ddr3_s4_uniphy_example_sim_ddr3_s4_uniphy_example_sim_e0_if0_p0_qsys_sequencer_cpu_inst_nios2_performance_monitors;
+endmodule 

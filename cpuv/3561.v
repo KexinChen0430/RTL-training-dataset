@@ -1,0 +1,16 @@
+module cf_spi (
+  spi_cs0n,
+  spi_cs1n,
+  spi_clk,
+  spi_sd_o,
+  spi_sd_i,
+  up_rstn,
+  up_clk,
+  up_spi_start,
+  up_spi_devsel,
+  up_spi_wdata_1,
+  up_spi_wdata_0,
+  up_spi_rdata,
+  up_spi_status,
+  debug_trigger,
+  debug_data);

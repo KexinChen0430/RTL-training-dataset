@@ -1,0 +1,22 @@
+
+module test(res,clk,in);
+
+  output reg [1:0] res;
+  input  clk;
+  input  in;
+
+  
+  generate
+      genvar i;
+      for (i = 0; i < 2; i = 1+i)
+          begin
+            
+            always @(posedge clk)
+                begin
+                  res[i:i] <= in;
+                end
+          end
+  endgenerate
+
+endmodule
+

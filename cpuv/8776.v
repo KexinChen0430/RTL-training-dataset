@@ -1,0 +1,25 @@
+module crt_op_stage
+(
+ input       h_reset_n,           
+ input       c_vde,               
+ input       cr11_b4,             
+ input       cr11_b5,             
+ input       a_arx_b5,            
+ input       m_sr01_b5,           
+ input       vblank,              
+ input       hblank,              
+ input       cclk_en,             
+ input       dclk_en,             
+ input       hde,                 
+ input       c_ahde,              
+ input       int_crt_line_end,    
+ input       t_crt_clk,           
+ input       a_ar10_b0,           
+ input       vga_en,              
+ output      c_t_crt_int,         
+ output      c_attr_de,           
+ output      c_t_cblank_n,        
+ output      ade,                 
+ output      screen_off,          
+ output      dis_en_sta           
+);

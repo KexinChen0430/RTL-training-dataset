@@ -1,0 +1,26 @@
+module ghrd_10as066n2_emif_hps (
+    input  wire          global_reset_n, 
+    input  wire [4095:0] hps_to_emif,    
+    output wire [4095:0] emif_to_hps,    
+    input  wire [1:0]    hps_to_emif_gp, 
+    output wire [0:0]    emif_to_hps_gp, 
+    output wire [0:0]    mem_ck,         
+    output wire [0:0]    mem_ck_n,       
+    output wire [16:0]   mem_a,          
+    output wire [0:0]    mem_act_n,      
+    output wire [1:0]    mem_ba,         
+    output wire [0:0]    mem_bg,         
+    output wire [0:0]    mem_cke,        
+    output wire [0:0]    mem_cs_n,       
+    output wire [0:0]    mem_odt,        
+    output wire [0:0]    mem_reset_n,    
+    output wire [0:0]    mem_par,        
+    input  wire [0:0]    mem_alert_n,    
+    inout  wire [3:0]    mem_dqs,        
+    inout  wire [3:0]    mem_dqs_n,      
+    inout  wire [31:0]   mem_dq,         
+    inout  wire [3:0]    mem_dbi_n,      
+    input  wire          oct_rzqin,      
+    input  wire          pll_ref_clk     
+);
+endmodule

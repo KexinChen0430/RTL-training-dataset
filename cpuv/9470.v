@@ -1,0 +1,1 @@
+module i2c_mock_master (clock,reset,address,write_data,start,write,read_data,ready,error,scl,sda);

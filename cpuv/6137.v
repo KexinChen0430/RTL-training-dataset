@@ -1,0 +1,44 @@
+module mmu_in_iram ( 
+	from_pc, 
+	to_iram); 
+   input [31:0] from_pc; 
+   output [31:0] to_iram; 
+   wire \from_pc[31] ;
+   wire \from_pc[30] ;
+   wire \from_pc[29] ;
+   wire \from_pc[28] ;
+   wire \from_pc[27] ;
+   wire \from_pc[26] ;
+   wire \from_pc[25] ;
+   wire \from_pc[24] ;
+   wire \from_pc[23] ;
+   wire \from_pc[22] ;
+   wire \from_pc[21] ;
+   wire \from_pc[20] ;
+   wire \from_pc[19] ;
+   wire \from_pc[18] ;
+   wire \from_pc[17] ;
+   wire \from_pc[16] ;
+   wire \from_pc[15] ;
+   wire \from_pc[14] ;
+   wire \from_pc[13] ;
+   wire \from_pc[12] ;
+   wire \from_pc[11] ;
+   wire \from_pc[10] ;
+   wire \from_pc[9] ;
+   wire \from_pc[8] ;
+   wire \from_pc[7] ;
+   wire \from_pc[6] ;
+   wire \from_pc[5] ;
+   wire \from_pc[4] ;
+   wire \from_pc[3] ;
+   wire \from_pc[2] ;
+   assign to_iram[31] = 1'b0 ;
+   assign to_iram[30] = 1'b0 ;
+   assign to_iram[29] = \from_pc[31]  ;
+   assign \from_pc[31]  = from_pc[31] ;
+   assign to_iram[28] = \from_pc[30]  ;
+   assign \from_pc[30]  = from_pc[30] ;
+   assign to_iram[0] = \from_pc[2]  ;
+   assign \from_pc[2]  = from_pc[2] ;
+endmodule

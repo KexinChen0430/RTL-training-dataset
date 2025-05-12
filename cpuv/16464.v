@@ -1,0 +1,1 @@
+module opc5cpu( input[15:0] datain, output [15:0] dataout, output[15:0] address, output rnw, input clk, input reset_b);

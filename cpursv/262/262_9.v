@@ -1,0 +1,38 @@
+
+module wb_drp  #(parameter  ADDR_WIDTH = 16)
+  (input  wire clk,
+   input  wire rst,
+   input  wire [(0-1)+ADDR_WIDTH:0] wb_adr_i,
+   input  wire [15:0] wb_dat_i,
+   output wire [15:0] wb_dat_o,
+   input  wire wb_we_i,
+   input  wire wb_stb_i,
+   output wire wb_ack_o,
+   input  wire wb_cyc_i,
+   output wire [(0-1)+ADDR_WIDTH:0] drp_addr,
+   output wire [15:0] drp_do,
+   input  wire [15:0] drp_di,
+   output wire drp_en,
+   output wire drp_we,
+   input  wire drp_rdy);
+
+  reg   cycle = 1'b0;
+
+  assign drp_addr = wb_adr_i;
+  assign drp_do = wb_dat_i;
+  assign wb_dat_o = drp_di;
+  assign drp_en = wb_cyc_i & (~cycle & wb_stb_i);
+  assign drp_we = ~cycle & ((wb_stb_i & wb_we_i) & wb_cyc_i);
+  assign wb_ack_o = drp_rdy;
+  
+  always @(posedge clk)
+      begin
+        cycle <= wb_stb_i & (~drp_rdy & wb_cyc_i);
+        if (rst) 
+          begin
+            cycle <= 1'b0;
+          end
+          
+      end
+endmodule
+

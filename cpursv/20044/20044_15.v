@@ -1,0 +1,24 @@
+
+module sign_ext(inp,res);
+
+  parameter signed  [31:0]  old_width = 4;
+  parameter signed  [31:0]  new_width = 1+1;
+  input  [(0-1)+old_width:0] inp;
+  output [new_width+(0-1):0] res;
+  wire [new_width+(0-1):0] result;
+
+  assign res = result;
+  
+  generate
+      if (new_width >= old_width) 
+        begin : u0
+          assign result = {{(-old_width)+new_width{inp[(0-1)+old_width]}},inp};
+        end
+      else 
+        begin : u1
+          assign result[new_width+(0-1):0] = inp[new_width+(0-1):0];
+        end
+  endgenerate
+
+endmodule
+

@@ -1,0 +1,28 @@
+
+module spiral_4(i_data,o_data_18,o_data_50,o_data_75,o_data_89);
+
+  input  signed  [18:0] i_data;
+  output signed  [18+7:0] o_data_18;
+  output signed  [18+7:0] o_data_50;
+  output signed  [18+7:0] o_data_75;
+  output signed  [18+7:0] o_data_89;
+  wire signed  [25:0] w1,w8,w9,w16,w25,w4,w5,w80,w75,w89,w18,w50;
+
+  assign w1 = i_data;
+  assign w8 = w1*(2**3);
+  assign w9 = w1+w8;
+  assign w16 = w1<<<4;
+  assign w25 = w16+w9;
+  assign w4 = w1<<2;
+  assign w5 = w4+w1;
+  assign w80 = w5<<<4;
+  assign w75 = (0-w5)+w80;
+  assign w89 = w80+w9;
+  assign w18 = 2*w9;
+  assign w50 = 2*w25;
+  assign o_data_18 = w18;
+  assign o_data_50 = w50;
+  assign o_data_75 = w75;
+  assign o_data_89 = w89;
+endmodule
+

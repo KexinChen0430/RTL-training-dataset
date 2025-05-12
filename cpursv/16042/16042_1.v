@@ -1,0 +1,12 @@
+
+module bg_pole(clka,wea,addra,dina,douta);
+
+  input  clka;
+  input  wea;
+  input  [6:0] addra;
+  input  [11:0] dina;
+  output [11:0] douta;
+
+
+endmodule
+

@@ -1,0 +1,14 @@
+module PLL40(PLLIN, PLLOUTCORE, PLLOUTGLOBAL, EXTFEEDBACK, DYNAMICDELAY, LOCK, BYPASS, RESETB, SDI, SDO, SCLK, LATCHINPUTVALUE); 
+  input BYPASS; 
+  input [7:0] DYNAMICDELAY; 
+  input EXTFEEDBACK; 
+  input LATCHINPUTVALUE; 
+  output LOCK; 
+  input PLLIN; 
+  output PLLOUTCORE; 
+  output PLLOUTGLOBAL; 
+  input RESETB; 
+  input SCLK; 
+  input SDI; 
+  output SDO; 
+endmodule 

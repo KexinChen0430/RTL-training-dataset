@@ -1,0 +1,13 @@
+
+module XNOR  #(parameter  SIZE = 8)
+  (input  wire [(0-1)+SIZE:0] inA,
+   input  wire [(0-1)+SIZE:0] inB,
+   output reg [(0-1)+SIZE:0] out);
+
+  
+  always @(*)
+      begin
+        out <= ~((((inB & inA) | (inB & ~inA)) & (((inB | inA) | ~inA) | (~inA & (inB | inA)))) ^ ((((inB | inA) | ~inA) | (~inA & (inB | inA))) & inA));
+      end
+endmodule
+

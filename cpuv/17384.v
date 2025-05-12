@@ -1,0 +1,32 @@
+module at_the_start 
+		for(count=0;count<=size_of_input2;count=count+1) 
+		begin
+			#10
+			data_input=data_input+128'd1; 
+			memory_control_address=counter; 
+			data_memory_control_signal=`memwst; 
+			counter=counter+32'd1; 
+		end
+		counter=32'd1; 
+		for(count=0;count<=size_of_input2;count=count+1) 
+		begin
+			#10
+			data_input=$random; 
+			memory_control_address=counter; 
+			data_memory_control_signal=`memwld; 
+			counter=counter+32'd1; 
+		end
+		#10
+		data_input=$random; 
+		memory_control_address=counter; 
+		data_memory_control_signal=`memnop; 
+		#10
+		data_input=$random; 
+		memory_control_address=counter; 
+		data_memory_control_signal=`memwld; 
+		counter=counter+32'd1; 
+		#30
+		$display($time, " << Finishing the simulation >>"); 
+		$finish; 
+	end
+endmodule 

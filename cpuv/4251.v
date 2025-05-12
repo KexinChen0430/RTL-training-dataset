@@ -1,0 +1,11 @@
+module i2c( input         CLK, 
+            input         RESET, 
+            input   [8:0] DATA_IN, 
+            output  [8:0] DATA_OUT, 
+            input         REQUEST_IO, 
+            input         REQUEST_START, 
+            input         REQUEST_STOP, 
+            output        READY, 
+            output        ACTIVE, 
+            inout         SDA, 
+            inout         SCL ); 

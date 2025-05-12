@@ -1,0 +1,25 @@
+module MDPath(
+    input clk, 
+    input reset, 
+    input MIO_ready, 
+    input IorD, 
+    input IRWrite, 
+    input[1:0] RegDst, 
+    input RegWrite, 
+    input[1:0] MemtoReg, 
+    input ALUSrcA, 
+    input[1:0] ALUSrcB, 
+    input[1:0] PCSource, 
+    input PCWrite, 
+    input PCWriteCond, 
+    input Branch, 
+    input[2:0] ALU_operation, 
+    output[31:0] PC_Current, 
+    input[31:0] data2CPU, 
+    output[31:0] Inst, 
+    output[31:0] data_out, 
+    output[31:0] M_addr, 
+    output zero, 
+    output overflow 
+);
+endmodule

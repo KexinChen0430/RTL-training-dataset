@@ -1,0 +1,25 @@
+
+module lfsr(clk,ar,sr,q);
+
+  input  clk;
+  input  ar;
+  output q;
+  output reg [7:0] sr;
+  wire polynomial;
+
+  assign polynomial = sr[3] ^ (((sr[5] | (~((sr[5] & ~sr[7]) | (sr[7] & ~sr[5])) & sr[4])) | (sr[7] & ~sr[5])) & ((((~sr[4] & sr[7]) | (~((sr[5] & ~sr[7]) | (sr[7] & ~sr[5])) & sr[4])) & ((~((sr[5] & ~sr[7]) | (sr[7] & ~sr[5])) & sr[4]) | ~sr[5])) | (~sr[7] & ~sr[4])));
+  assign q = sr[7];
+  
+  always @(posedge clk or negedge ar)
+      begin
+        if (~ar) 
+          begin
+            sr <= 8'b00000001;
+          end
+        else 
+          begin
+            sr <= {sr[6:0],polynomial};
+          end
+      end
+endmodule
+

@@ -1,0 +1,37 @@
+
+module ghrd_10as066n2_avlmm_pr_freeze_bridge_0(input  wire clock,
+                                               input  wire freeze_conduit_freeze,
+                                               output wire freeze_conduit_illegal_request,
+                                               input  wire reset_n,
+                                               output wire slv_bridge_to_pr_read,
+                                               input  wire slv_bridge_to_pr_waitrequest,
+                                               output wire slv_bridge_to_pr_write,
+                                               output wire [9:0] slv_bridge_to_pr_address,
+                                               output wire [3:0] slv_bridge_to_pr_byteenable,
+                                               output wire [31:0] slv_bridge_to_pr_writedata,
+                                               input  wire [31:0] slv_bridge_to_pr_readdata,
+                                               output wire [2:0] slv_bridge_to_pr_burstcount,
+                                               input  wire slv_bridge_to_pr_readdatavalid,
+                                               output wire slv_bridge_to_pr_beginbursttransfer,
+                                               output wire slv_bridge_to_pr_debugaccess,
+                                               input  wire [1:0] slv_bridge_to_pr_response,
+                                               output wire slv_bridge_to_pr_lock,
+                                               input  wire slv_bridge_to_pr_writeresponsevalid,
+                                               input  wire slv_bridge_to_sr_read,
+                                               output wire slv_bridge_to_sr_waitrequest,
+                                               input  wire slv_bridge_to_sr_write,
+                                               input  wire [9:0] slv_bridge_to_sr_address,
+                                               input  wire [3:0] slv_bridge_to_sr_byteenable,
+                                               input  wire [31:0] slv_bridge_to_sr_writedata,
+                                               output wire [31:0] slv_bridge_to_sr_readdata,
+                                               input  wire [2:0] slv_bridge_to_sr_burstcount,
+                                               output wire slv_bridge_to_sr_readdatavalid,
+                                               input  wire slv_bridge_to_sr_beginbursttransfer,
+                                               input  wire slv_bridge_to_sr_debugaccess,
+                                               output wire [1:0] slv_bridge_to_sr_response,
+                                               input  wire slv_bridge_to_sr_lock,
+                                               output wire slv_bridge_to_sr_writeresponsevalid);
+
+
+endmodule
+

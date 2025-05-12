@@ -1,0 +1,1 @@
+Slist(Satom(Mod) Slist(Satom(Add) Slist(Satom(Atom) Slist(Satom(Int) Satom(1))) Slist(Satom(Mod) Slist(Satom(Atom) Slist(Satom(Sym) Slist(Satom(Var) Satom(wraddr)))) Slist(Satom(Atom) Slist(Satom(Sym) Slist(Satom(Var) Satom(DEPTH))))) Slist(Satom(Atom) Slist(Satom(Sym) Slist(Satom(Var) Satom(DEPTH))))))

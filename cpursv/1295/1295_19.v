@@ -1,0 +1,32 @@
+
+module DataMemory  #(parameter  DATA_WIDTH = 32, ADDR_WIDTH = 32)
+  (input  [DATA_WIDTH-1:0] data,
+   input  [ADDR_WIDTH-1:0] addr,
+   input  [3:0] we,
+   input  clk,
+   output [DATA_WIDTH-1:0] q);
+
+  reg  [DATA_WIDTH-1:0] ram[(2**(ADDR_WIDTH+(0-22)))-1:0];
+  reg  [ADDR_WIDTH-1:0] addr_reg;
+
+  
+  initial    ram[64] = 32'hf0f0f0f0;
+  
+  always @(negedge clk)
+      begin
+        case (we)
+
+          4'b0001: ram[addr[9:2]][7:0] <= data[7:0];
+
+          4'b0010: ram[addr[9:2]][15:8] <= data[15:8];
+
+          4'b1111: ram[addr[9:2]] <= data;
+
+          default:  ;
+
+        endcase
+
+      end
+  assign q = ram[addr[9:2]];
+endmodule
+

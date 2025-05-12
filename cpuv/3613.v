@@ -1,0 +1,1 @@
+module alu_control(ALUOp,funct,ALUCon); 

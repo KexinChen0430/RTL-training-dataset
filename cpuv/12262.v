@@ -1,0 +1,9 @@
+module der_reg_15
+  (
+   input 	     de_clk,      
+   input 	     de_rstn,     
+   ...
+   ...
+   ...
+   output reg [31:0] xy4_15
+   );

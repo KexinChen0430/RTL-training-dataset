@@ -1,0 +1,16 @@
+parameter DATA_WIDTH = 32, 
+parameter STROBE_WIDTH = DATA_WIDTH / 8, 
+parameter USE_KEEP = 0 
+input rst, 
+input i_axi_clk, 
+output o_axi_ready, 
+input [DATA_WIDTH - 1:0] i_axi_data, 
+input [STROBE_WIDTH - 1:0] i_axi_keep, 
+input i_axi_last, 
+input i_axi_valid, 
+output o_ppfifo_clk, 
+input [1:0] i_ppfifo_rdy, 
+output reg [1:0] o_ppfifo_act, 
+input [23:0] i_ppfifo_size, 
+output reg o_ppfifo_stb, 
+output reg [DATA_WIDTH - 1:0] o_ppfifo_data 

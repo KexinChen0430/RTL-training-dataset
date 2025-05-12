@@ -1,0 +1,17 @@
+
+module dsi_byte_reverse(d_i,q_o);
+
+  parameter  g_num_bytes = 4;
+  input  [(8*g_num_bytes)-1:0] d_i;
+  output [(8*g_num_bytes)-1:0] q_o;
+
+  
+  generate
+      genvar i,j;
+      for (i = 0; i < 8; i = i+1)
+          for (j = 0; j < g_num_bytes; j = j+1)
+              assign q_o[i+(8*((-j)+(g_num_bytes+(0-1))))] = d_i[i+(j*8)];
+  endgenerate
+
+endmodule
+

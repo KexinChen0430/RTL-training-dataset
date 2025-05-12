@@ -1,0 +1,16 @@
+
+module m1(clk,rstn,leds);
+
+  parameter  width = 8;
+  input  clk;
+  input  rstn;
+  output reg [(-1)+width:0] leds;
+
+  
+  always @(posedge clk or negedge rstn)
+      begin
+        if (~rstn) leds <= {width{1'b0}};
+        else leds <= {{(-1)+width{1'b0}},1'b1}+leds;
+      end
+endmodule
+

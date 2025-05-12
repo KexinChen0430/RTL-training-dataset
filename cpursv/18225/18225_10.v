@@ -1,0 +1,9 @@
+
+module XOR(A,B,Z);
+
+  input  A,B;
+  output Z;
+
+  assign Z = (B ^ (B & A)) ^ ((A | B) & (((~(A & (((B | ~B) & A) & (B | ~B))) & (B & A)) | (A & (((B | ~B) & A) & (B | ~B)))) & ((~(A & (((B | ~B) & A) & (B | ~B))) & (B & A)) | ~(B & A))));
+endmodule
+

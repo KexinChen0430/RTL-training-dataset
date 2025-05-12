@@ -1,0 +1,1 @@
+module async_fifo_ram (wrclk, rdclk, wrenb, wrptr, wrdata, rdenb, rdptr, rddata);

@@ -1,0 +1,1 @@
+module jtag_shifter (shift_clk, shift_din, shift, shift_dout, control_reg_ce, bram_ce, bram_a, din_load, din, bram_d, bram_we) ;

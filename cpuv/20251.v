@@ -1,0 +1,10 @@
+module uart(clk, TxD, TxD_data, TxD_start, TxD_busy, RxD, RxD_data, RxD_ready, RxD_read);
+	input clk; 
+	input [7:0] TxD_data; 
+	input TxD_start; 
+	output TxD; 
+	output TxD_busy; 
+	input RxD; 
+	output [7:0] RxD_data; 
+	output RxD_ready; 
+	input RxD_read; 

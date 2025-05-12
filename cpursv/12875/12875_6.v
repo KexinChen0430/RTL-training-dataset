@@ -1,0 +1,23 @@
+
+module block_ram(input  clock,
+                 input  [(0-1)+DBITS:0] w_data,
+                 input  w_valid,
+                 input  [ABITS-1:0] w_addr,
+                 output reg [(0-1)+DBITS:0] r_data,
+                 input  [ABITS-1:0] r_addr);
+
+  parameter  ABITS = 9;
+  parameter  DBITS = 64;
+  reg  [(0-1)+DBITS:0] bram[0:(0-1)+(1<<<1**ABITS)];
+  reg  [(0-1)+DBITS:0] bram_oreg;
+
+  
+  always @(posedge clock)
+      begin
+        if (w_valid) bram[w_addr] <= w_data;
+          
+        bram_oreg <= bram[r_addr];
+        r_data <= bram_oreg;
+      end
+endmodule
+

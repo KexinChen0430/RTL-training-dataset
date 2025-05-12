@@ -1,0 +1,16 @@
+module MultiplierLSB (
+                      Rom_ResetMul, 
+                      notMultip, 
+                      notAbortWB, 
+                      SumInLSBs, CarryInLSBs, 
+                      SCLSBs, SBLSBs, SALSBs, 
+                      CCLSB, CBLSB, CALSB, 
+                      Shift, 
+                      Pos, 
+                      Zero, 
+                      CarryOut0, 
+                      CarryOut3, 
+                      SumOut0, 
+                  SumCarryLoadEn, 
+                  InitialMulStep, 
+                  InitialCarryBit); 

@@ -1,0 +1,36 @@
+
+module fp(l,r,ct);
+
+  input  [1:32] l,r;
+  output [1:64] ct;
+
+  assign ct[1] = r[8];
+  assign ct[2] = l[8];
+  assign ct[3] = r[16];
+  assign ct[4] = l[16];
+  assign ct[5] = r[24];
+  assign ct[6] = l[24];
+  assign ct[7] = r[32];
+  assign ct[8] = l[32];
+  assign ct[9] = r[7];
+  assign ct[10] = l[7];
+  assign ct[17] = r[6];
+  assign ct[18] = l[6];
+  assign ct[25] = r[5];
+  assign ct[26] = l[5];
+  assign ct[33] = r[4];
+  assign ct[34] = l[4];
+  assign ct[41] = r[3];
+  assign ct[42] = l[3];
+  assign ct[49] = r[2];
+  assign ct[50] = l[2];
+  assign ct[57] = r[1];
+  assign ct[58] = l[1];
+  assign ct[59] = r[9];
+  assign ct[60] = l[9];
+  assign ct[61] = r[17];
+  assign ct[62] = l[17];
+  assign ct[63] = r[25];
+  assign ct[64] = l[25];
+endmodule
+

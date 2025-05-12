@@ -1,0 +1,3 @@
+module tri_state_bridge_0_bridge_arbitrator
+; 
+endmodule

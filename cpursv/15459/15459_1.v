@@ -1,0 +1,41 @@
+
+module oh_par2ser  #(parameter  PW = 64, SW = 1, CW = $clog2((1/SW)*PW))
+  (input  clk,
+   input  nreset,
+   input  [PW+(0-1):0] din,
+   output [(0-1)+SW:0] dout,
+   output access_out,
+   input  load,
+   input  shift,
+   input  [7:0] datasize,
+   input  lsbfirst,
+   input  fill,
+   input  wait_in,
+   output wait_out);
+
+  reg  [PW+(0-1):0] shiftreg;
+  reg  [CW+(0-1):0] count;
+  wire start_transfer;
+  wire busy;
+
+  assign start_transfer = (~wait_in & load) & ~busy;
+  
+  always @(posedge clk or negedge nreset)
+      if (!nreset) count[CW+(0-1):0] <= 'b0;
+      else if (start_transfer) count[CW+(0-1):0] <= datasize[CW+(0-1):0];
+      else if (shift & busy) count[CW+(0-1):0] <= (-1'b1)+count[CW+(0-1):0];
+        
+  assign busy = |count[CW+(0-1):0];
+  assign access_out = busy;
+  assign wait_out = wait_in | busy;
+  
+  always @(posedge clk or negedge nreset)
+      if (!nreset) shiftreg[PW+(0-1):0] = 'b0;
+      else if (start_transfer) shiftreg[PW+(0-1):0] = din[PW+(0-1):0];
+      else if (lsbfirst & shift) shiftreg[PW+(0-1):0] = {{SW{fill}},shiftreg[PW+(0-1):SW]};
+      else if (shift) 
+        shiftreg[PW+(0-1):0] = {shiftreg[((0-SW)+(0-1))+PW:0],{SW{fill}}};
+        
+  assign dout[(0-1)+SW:0] = lsbfirst ? shiftreg[(0-1)+SW:0] : shiftreg[PW+(0-1):PW+(0-SW)];
+endmodule
+

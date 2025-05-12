@@ -1,0 +1,25 @@
+module sky130_fd_sc_ms__sdfsbp (
+    Q,      
+    Q_N,    
+    CLK,    
+    D,      
+    SCD,    
+    SCE,    
+    SET_B,  
+    VPWR,   
+    VGND,   
+    VPB,    
+    VNB     
+);
+    output Q;      
+    output Q_N;    
+    input  CLK;    
+    input  D;      
+    input  SCD;    
+    input  SCE;    
+    input  SET_B;  
+    input  VPWR;   
+    input  VGND;   
+    input  VPB;    
+    input  VNB;    
+endmodule 

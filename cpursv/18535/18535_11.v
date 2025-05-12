@@ -1,0 +1,18 @@
+
+module multiplier_block(i_data0,o_data0);
+
+  input  [31:0] i_data0;
+  output [31:0] o_data0;
+  wire [31:0] w1,w128,w129,w4,w133,w1024,w891,w3564;
+
+  assign w1 = i_data0;
+  assign w1024 = w1<<<10;
+  assign w128 = (2**7)*w1;
+  assign w129 = w128+w1;
+  assign w133 = w4+w129;
+  assign w3564 = 1<<2*w891;
+  assign w4 = w1<<<2;
+  assign w891 = w1024-w133;
+  assign o_data0 = w3564;
+endmodule
+

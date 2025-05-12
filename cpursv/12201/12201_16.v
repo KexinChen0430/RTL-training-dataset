@@ -1,0 +1,57 @@
+
+module alu  #(parameter  WIDTH = 32)
+  (input  [(0-1)+WIDTH:0] a,b,
+   input  [5:0] aluop,
+   output reg [(0-1)+WIDTH:0] result);
+
+  wire [30:0] b2;
+
+  assign b2 = a[30:0];
+  wire [(0-1)+WIDTH:0] sum,slt,shamt;
+
+  
+  always @(*)
+      begin
+        case (aluop)
+
+          6'b000000: result <= b<<a;
+
+          6'b000010: result <= b>>a;
+
+          6'b000011: result <= b>>>a;
+
+          6'b001000: result <= 32'b0;
+
+          6'b100000: result <= a+b;
+
+          6'b100001: result <= a+b;
+
+          6'b100010: result <= (-b)+a;
+
+          6'b100011: result <= (-b)+a;
+
+          6'b100110: result <= ((((((~b | ((((~((b & a) & b) & (b & (b & (b & (a | ~a))))) | (((b & a) & b) & ~(b & (b & (b & (a | ~a)))))) & ~a) ^ (~a & ((((b | ~b) & a) & ((~((b & a) & b) & (b & (b & (b & (a | ~a))))) | (((b & a) & b) & ~(b & (b & (b & (a | ~a))))))) ^ (((b & a) ^ (a & (b & ((b | ~b) & a)))) & ((b | ~b) & a)))))) & ((b | ~b) & a)) & b) & (a | (b & (a | ~a)))) ^ (((~((b & a) & b) & (b & (b & (b & (a | ~a))))) | (((b & a) & b) & ~(b & (b & (b & (a | ~a)))))) & (a | (b & (a | ~a))))) & (a | (b & (a | ~a)))) ^ ((a | (b & (a | ~a))) & (((~b | ((((~((b & a) & b) & (b & (b & (b & (a | ~a))))) | (((b & a) & b) & ~(b & (b & (b & (a | ~a)))))) & ~a) ^ (~a & ((((b | ~b) & a) & ((~((b & a) & b) & (b & (b & (b & (a | ~a))))) | (((b & a) & b) & ~(b & (b & (b & (a | ~a))))))) ^ (((b & a) ^ (a & (b & ((b | ~b) & a)))) & ((b | ~b) & a)))))) & ((b | ~b) & a)) & (a | (b & (a | ~a)))));
+
+          6'b100100: result <= b & a;
+
+          6'b100101: result <= a | (b & (a | ~a));
+
+          6'b100111: result <= ~(b & a);
+
+          6'b101010: result <= (a < b) ? 1 : 0;
+
+          6'b000001: begin
+                result <= (a < 0) ? 0 : 1;
+              end
+
+          6'b001010: begin
+                result <= (a > 0) ? 0 : 1;
+              end
+
+          6'b010001: result <= 32'b11111111111111110000000000000000 & (b*(2**16));
+
+        endcase
+
+      end
+endmodule
+

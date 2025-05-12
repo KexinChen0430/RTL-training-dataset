@@ -1,0 +1,1 @@
+Slist(Satom(Mod) Slist(Satom(Mul) Slist(Satom(Sub) Slist(Satom(Atom) Slist(Satom(Sym) Slist(Satom(Var) Satom(hcounter)))) Slist(Satom(Atom) Slist(Satom(Sym) Slist(Satom(Var) Satom(LEFT))))) Slist(Satom(Mod) Slist(Satom(Atom) Slist(Satom(Int) Satom(1))) Slist(Satom(Atom) Slist(Satom(Int) Satom(32)))) Slist(Satom(Atom) Slist(Satom(Int) Satom(32)))))

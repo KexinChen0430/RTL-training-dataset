@@ -1,0 +1,21 @@
+
+module arbiter_priority(grant,await,request);
+
+  parameter  ARW = 99;
+  input  [ARW+(0-1):0] request;
+  output [ARW+(0-1):0] grant;
+  output [ARW+(0-1):0] await;
+
+  genvar j;
+  assign await[0] = 1'b0;
+  
+  generate
+      for (j = ARW+(0-1); j >= 1; j = (0-1)+j)
+          begin : gen_arbiter
+            assign await[j] = |request[(0-1)+j:0];
+          end
+  endgenerate
+
+  assign grant[ARW+(0-1):0] = ~await[ARW+(0-1):0] & request[ARW+(0-1):0];
+endmodule
+

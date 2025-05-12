@@ -1,0 +1,3 @@
+module zynq_design_1_axi_bram_ctrl_0_0(s_axi_aclk, s_axi_aresetn, s_axi_awid,
+  ...
+  bram_wrdata_b, bram_rddata_b)

@@ -1,0 +1,20 @@
+module RMON_CTRL (
+Clk             , 
+Reset           , 
+Reg_apply_0     , 
+Reg_addr_0      , 
+Reg_data_0      , 
+Reg_next_0      , 
+Reg_apply_1     , 
+Reg_addr_1      , 
+Reg_data_1      , 
+Reg_next_1      , 
+Addra           , 
+Dina            , 
+Douta           , 
+Wea             , 
+CPU_rd_addr     , 
+CPU_rd_apply    , 
+CPU_rd_grant    , 
+CPU_rd_dout     
+);

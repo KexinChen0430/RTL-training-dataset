@@ -1,0 +1,1 @@
+module wait_time_module (reset, work, clk, wait_time);

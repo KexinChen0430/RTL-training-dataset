@@ -1,0 +1,24 @@
+
+module test;
+
+  reg  [1:4] a;
+  reg  [4:1] b;
+  integer i;
+
+  
+  initial  
+  begin
+    a = 4'b1100;
+    for (i = 1; i <= 4; i = 1+i)
+        b[i] = a[i];
+    $display("a=%b, b=%b",a,b);
+    if (b !== 4'b0011) 
+      begin
+        $display("FAILED -- b == %b",b);
+        $finish;
+      end
+      
+    $display(PASSED);
+  end
+endmodule
+

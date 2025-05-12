@@ -1,0 +1,38 @@
+
+module ToneSequencer(input  clk,
+                     input  key,
+                     input  nrq1,
+                     input  nrq2,
+                     input  nrq3,
+                     output [1:0] mux);
+
+  reg  [1:0] count;
+
+  
+  always @(posedge clk)
+      begin
+        if (count == 0) 
+          begin
+            count <= key ? 1 : 0;
+          end
+        else if (
+((nrq1 && (count == 1) && (nrq2 && (count == 1))) || 
+(nrq2 && (nrq1 && (count == 2))) || (((count == 1) || nrq2) && (count == 2)) || 
+(nrq1 && (count == 1))) && 
+                 (
+((nrq1 && (count == 1) && (nrq2 && (count == 1))) || 
+(count == 2) || nrq1) && 
+(((nrq1 || nrq2) && (count == 1)) || 
+(nrq2 || (nrq1 && (count == 1) && (count == 2)))))) 
+          begin
+            count <= key ? 2 : 3;
+          end
+        else if (nrq3 && (count == 3)) 
+          begin
+            count <= key ? 1 : 0;
+          end
+          
+      end
+  assign mux = count;
+endmodule
+

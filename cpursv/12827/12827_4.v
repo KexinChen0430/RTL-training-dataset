@@ -1,0 +1,15 @@
+
+module oh_mux4  #(parameter  DW = 1)
+  (input  sel3,
+   input  sel2,
+   input  sel1,
+   input  sel0,
+   input  [DW+(0-1):0] in3,
+   input  [DW+(0-1):0] in2,
+   input  [DW+(0-1):0] in1,
+   input  [DW+(0-1):0] in0,
+   output [DW+(0-1):0] out);
+
+  assign out[DW+(0-1):0] = (({DW{sel3}} & in3[DW+(0-1):0]) | ((in1[DW+(0-1):0] & (((in0[DW+(0-1):0] | {DW{sel1}}) & (in0[DW+(0-1):0] | in1[DW+(0-1):0])) & {DW{sel1}})) | ({DW{sel2}} & in2[DW+(0-1):0]))) | (({DW{sel0}} | (in1[DW+(0-1):0] & (((in0[DW+(0-1):0] | {DW{sel1}}) & (in0[DW+(0-1):0] | in1[DW+(0-1):0])) & {DW{sel1}}))) & in0[DW+(0-1):0]);
+endmodule
+

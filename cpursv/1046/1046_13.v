@@ -1,0 +1,18 @@
+
+module var24_multi(input  A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,
+                   output valid);
+
+  wire [8:0]  min_value = 9'd120;
+  wire [8:0]  max_weight = 9'd60;
+  wire [8:0]  max_volume = 9'd60;
+  wire [8:0] 
+       total_value = (((U*9'd24)+((9'd5*X)+(9'd18*W)))+((V*9'd3)+(T*9'd23)))+((((9'd7*Q)+((9'd7*R)+(9'd29*S)))+((((M*9'd16)+(K*9'd30))+((((9'd6*I)+(J*9'd15))+((((9'd14*H)+(9'd12*F))+(((9'd0*C)+(B*9'd8))+((9'd10*E)+(A*9'd4))))+((D*9'd20)+(G*9'd18))))+(L*9'd8)))+(P*9'd14)))+((9'd18*O)+(9'd18*N)));
+  wire [8:0] 
+       total_weight = (((X*9'd21)+(U*9'd26))+(W*9'd0))+(((((R*9'd26)+((T*9'd22)+(9'd1*S)))+((P*9'd12)+(((9'd13*L)+((N*9'd14)+(9'd8*M)))+((((9'd6*G)+((((9'd28*A)+(B*9'd8))+(9'd28*F))+((9'd27*C)+((E*9'd27)+(D*9'd18)))))+((J*9'd0)+(9'd1*H)))+((I*9'd20)+(K*9'd5))))))+((O*9'd22)+(Q*9'd23)))+(9'd15*V));
+  wire [8:0] 
+       total_volume = ((((9'd3*X)+(9'd26*W))+(U*9'd18))+(((9'd16*V)+(((S*9'd28)+(((9'd9*M)+(((O*9'd19)+(K*9'd5))+((((J*9'd15)+(9'd2*L))+(9'd12*I))+(((E*9'd0)+(9'd24*F))+(((9'd20*H)+(9'd4*G))+(((9'd27*A)+((B*9'd27)+(C*9'd4)))+(D*9'd4)))))))+((Q*9'd30)+(9'd28*N))))+(9'd18*P)))+(R*9'd12)))+(9'd13*T);
+
+  assign valid = (total_weight <= max_weight) && 
+                 (total_volume <= max_volume) && (total_value >= min_value);
+endmodule
+

@@ -1,0 +1,27 @@
+module. 
+always@(posedge clk_83M or negedge rst_n) 
+begin
+ if(!rst_n) 
+   begin
+     Target_Addr_sync<=3'b0; 
+     page_offset_addr_sync<='b0; 
+     Operation_Type_sync<=3'b0; 
+     Operation_en_sync<=1'b0; 
+     Target_Addr_o<=3'b0; 
+     page_offset_addr_o<='b0; 
+     Operation_en_o<=1'b0; 
+     Operation_Type_o<=3'b0; 
+   end
+ else 
+ begin
+     Target_Addr_sync<=Target_Addr; 
+     page_offset_addr_sync<=page_offset_addr; 
+     Operation_en_sync<=Operation_en; 
+     Operation_Type_sync<=Operation_Type; 
+     Target_Addr_o<=Target_Addr_sync; 
+     page_offset_addr_o<=page_offset_addr_sync; 
+     Operation_en_o<=Operation_en_sync; 
+     Operation_Type_o<=Operation_Type_sync; 
+ end
+end
+endmodule 

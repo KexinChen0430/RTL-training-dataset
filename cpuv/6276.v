@@ -1,0 +1,13 @@
+module alt4gxb_reset_controller 
+  (input inclk, 
+   input async_reset, 
+   input test_sim, 
+   input pll_locked, 
+   input rx_pll_locked, 
+   input fifo_err, 
+   input inclk_eq_125mhz, 
+   output gxb_powerdown, 
+   output txdigitalreset, 
+   output rxanalogreset, 
+   output rxdigitalreset 
+) ;

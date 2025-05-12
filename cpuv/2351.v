@@ -1,0 +1,1 @@
+module spi_clock_divisor (clkin, reset, clkoutp, clkoutn);

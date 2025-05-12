@@ -1,0 +1,21 @@
+module RAM64M (...);
+    parameter [63:0] INIT_A = 64'h0000000000000000;
+    parameter [63:0] INIT_B = 64'h0000000000000000;
+    parameter [63:0] INIT_C = 64'h0000000000000000;
+    parameter [63:0] INIT_D = 64'h0000000000000000;
+    parameter [0:0] IS_WCLK_INVERTED = 1'b0;
+    output DOA;
+    output DOB;
+    output DOC;
+    output DOD;
+    input [5:0] ADDRA;
+    input [5:0] ADDRB;
+    input [5:0] ADDRC;
+    input [5:0] ADDRD;
+    input DIA;
+    input DIB;
+    input DIC;
+    input DID;
+    input WCLK;
+    input WE;
+endmodule

@@ -1,0 +1,33 @@
+
+module ad_mem(clka,wea,addra,dina,clkb,addrb,doutb);
+
+  parameter  DATA_WIDTH = 16;
+  parameter  ADDR_WIDTH = 5;
+  localparam  DW = (0-1)+DATA_WIDTH;
+  localparam  AW = (0-1)+ADDR_WIDTH;
+  input  clka;
+  input  wea;
+  input  [AW:0] addra;
+  input  [DW:0] dina;
+  input  clkb;
+  input  [AW:0] addrb;
+  output [DW:0] doutb;
+  reg  [DW:0] m_ram[0:((1+1)**ADDR_WIDTH)+(0-1)];
+  reg  [DW:0] doutb;
+
+  
+  always @(posedge clka)
+      begin
+        if (wea == 1'b1) 
+          begin
+            m_ram[addra] <= dina;
+          end
+          
+      end
+  
+  always @(posedge clkb)
+      begin
+        doutb <= m_ram[addrb];
+      end
+endmodule
+

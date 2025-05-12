@@ -1,0 +1,26 @@
+module MusicScore(ReadOrWrite, Address, KeyInput, KeyOutput, TimeInput, TimeOutput,Clock, Reset, Choice); 
+input ReadOrWrite, Clock, Reset; 
+parameter DataLength=4; 
+input [DataLength-1:0] KeyInput, TimeInput; 
+output reg [DataLength-1:0] KeyOutput, TimeOutput; 
+parameter AddressBits=5; 
+input [AddressBits-1:0] Address; 
+parameter MemorySize=40; 
+input [1:0] Choice; 
+parameter Music1 = 0; 
+parameter Music2 = 12; 
+parameter Music3 = 24; 
+wire [3:0] MusicOffset; 
+assign MusicOffset = Choice[1] ? Music3 : (Choice[0]? Music1 : Music2); 
+reg [DataLength-1:0] Keys [0:MemorySize-1]; 
+reg [DataLength-1:0] Times [0:MemorySize-1]; 
+always@(posedge Clock or posedge Reset) 
+	if(Reset==1) begin 
+	end
+	else if (ReadOrWrite==1) begin	
+		KeyOutput<=Keys[Address+MusicOffset]; TimeOutput<=Times[Address+MusicOffset]; 
+	end
+	else begin 
+		Keys[Address]<=KeyInput; Times[Address]<=TimeInput; 
+	end
+endmodule 

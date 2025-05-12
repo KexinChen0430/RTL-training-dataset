@@ -1,0 +1,11 @@
+
+module adder(output sumout,
+             output cout,
+             input  a,
+             input  b,
+             input  cin);
+
+  assign sumout = (((b & (((cin & ~((a & ~b) | ((~(b & a) & b) | (~b & (b & a))))) | ((~((a & ~b) | ((~(b & a) & b) | (~b & (b & a)))) | ((((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b))) & ~((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))))) | (((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))) & ~(((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b)))))) | (~a & ~cin))) & ~((((cin & ~((a & ~b) | ((~(b & a) & b) | (~b & (b & a))))) | ((~((a & ~b) | ((~(b & a) & b) | (~b & (b & a)))) | ((((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b))) & ~((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))))) | (((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))) & ~(((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b)))))) | (~a & ~cin)) & a)) | (((((cin & ~((a & ~b) | ((~(b & a) & b) | (~b & (b & a))))) | ((~((a & ~b) | ((~(b & a) & b) | (~b & (b & a)))) | ((((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b))) & ~((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))))) | (((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))) & ~(((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b)))))) | (~a & ~cin)) & a) & ~(b & (((cin & ~((a & ~b) | ((~(b & a) & b) | (~b & (b & a))))) | ((~((a & ~b) | ((~(b & a) & b) | (~b & (b & a)))) | ((((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b))) & ~((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))))) | (((~cin & (a & ~b)) & ((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (a & ~cin))) & ~(((((b & ~a) | cin) | ((((a & ~b) | a) | b) & ~b)) & (b & ~cin)) & (~cin & (a & ~b)))))) | (~a & ~cin))))) | (cin & ~((a & ~b) | ((~(b & a) & b) | (~b & (b & a)))));
+  assign cout = ((((a & ~b) | a) | b) & cin) | (b & (cin | (b & a)));
+endmodule
+

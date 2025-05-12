@@ -1,0 +1,28 @@
+module sky130_fd_io__top_xres4v2 (
+    input  FILT_IN_H,        
+    input  INP_SEL_H,        
+    inout  PAD,              
+    inout  PAD_A_ESD_H,      
+    inout  AMUXBUS_A,        
+    inout  AMUXBUS_B,        
+    input  DISABLE_PULLUP_H, 
+    input  ENABLE_H,         
+    input  ENABLE_VDDIO,     
+    input  EN_VDDIO_SIG_H,   
+    output XRES_H_N,         
+    inout  PULLUP_H,         
+    input  VSWITCH,          
+    input  VCCD,             
+    input  VCCHIB,           
+    input  VDDA,             
+    input  VDDIO,            
+    input  VDDIO_Q,          
+    output TIE_HI_ESD,       
+    inout  TIE_WEAK_HI_H,    
+    input  VSSA,             
+    input  VSSD,             
+    input  VSSIO,            
+    input  VSSIO_Q,          
+    output TIE_LO_ESD        
+);
+endmodule

@@ -1,0 +1,22 @@
+module BUFGCTRL (...); 
+    output O; 
+    input CE0; 
+    input CE1; 
+    input I0; 
+    input I1; 
+    input IGNORE0; 
+    input IGNORE1; 
+    input S0; 
+    input S1; 
+    parameter integer INIT_OUT = 0; 
+    parameter PRESELECT_I0 = "FALSE"; 
+    parameter PRESELECT_I1 = "FALSE"; 
+    parameter [0:0] IS_CE0_INVERTED = 1'b0; 
+    parameter [0:0] IS_CE1_INVERTED = 1'b0; 
+    parameter [0:0] IS_I0_INVERTED = 1'b0; 
+    parameter [0:0] IS_I1_INVERTED = 1'b0; 
+    parameter [0:0] IS_IGNORE0_INVERTED = 1'b0; 
+    parameter [0:0] IS_IGNORE1_INVERTED = 1'b0; 
+    parameter [0:0] IS_S0_INVERTED = 1'b0; 
+    parameter [0:0] IS_S1_INVERTED = 1'b0; 
+endmodule 

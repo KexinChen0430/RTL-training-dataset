@@ -1,0 +1,6 @@
+
+module mi_nios_cpu_nios2_performance_monitors;
+
+
+endmodule
+

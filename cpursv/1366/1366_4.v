@@ -1,0 +1,31 @@
+
+module alu(input  [31:0] A,B,
+           input  [1+1:0] F,
+           output reg [31:0] Y,
+           output Zero);
+
+  
+  always @(*)
+      case (F[1+1:0])
+
+        3'b000: Y <= B & A;
+
+        3'b001: Y <= B | A;
+
+        3'b010: Y <= B+A;
+
+        3'b011: Y <= ~B & A;
+
+        3'b101: Y <= A+~B;
+
+        3'b110: Y <= A+(-B);
+
+        3'b111: Y <= (A < B) ? 1 : 0;
+
+        default: Y <= 0;
+
+      endcase
+
+  assign Zero = Y == 32'b0;
+endmodule
+

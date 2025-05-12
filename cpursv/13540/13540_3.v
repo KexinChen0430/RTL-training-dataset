@@ -1,0 +1,9 @@
+
+module multiply  #(parameter  WIDTH = 1)
+  (input  [(-1)+WIDTH:0] a,
+   input  [(-1)+WIDTH:0] b,
+   output [(-1)+WIDTH<<1:0] out);
+
+  assign out = b*a;
+endmodule
+

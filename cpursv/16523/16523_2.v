@@ -1,0 +1,28 @@
+
+module bistable_domain_cross(rst,clk_a,in,clk_b,out);
+
+  parameter  width = 1;
+  input  rst;
+  input  clk_a;
+  input  [(0-1)+width:0] in;
+  input  clk_b;
+  output [(0-1)+width:0] out;
+  reg  [(0-1)+width:0] sync_clk_b[1:0];
+
+  
+  always @(posedge clk_b or posedge rst)
+      begin
+        if (rst == 1) 
+          begin
+            sync_clk_b[0] <= 0;
+            sync_clk_b[1] <= 0;
+          end
+        else 
+          begin
+            sync_clk_b[0] <= in;
+            sync_clk_b[1] <= sync_clk_b[0];
+          end
+      end
+  assign out = sync_clk_b[1];
+endmodule
+

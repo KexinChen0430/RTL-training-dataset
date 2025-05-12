@@ -1,0 +1,1 @@
+module sin_lut (input [5:0] lookup, output [7:0] value);

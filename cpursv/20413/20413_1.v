@@ -1,0 +1,19 @@
+
+module GP_DLATCHRI(input  D,
+                   input  nCLK,
+                   input  nRST,
+                   output reg nQ);
+
+  parameter  INIT = 1'bx;
+
+  
+  initial    nQ = INIT;
+  
+  always @(*)
+      begin
+        if (!nRST) nQ <= 1'b1;
+        else if (!nCLK) nQ <= ~D;
+          
+      end
+endmodule
+

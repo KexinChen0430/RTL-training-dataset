@@ -1,0 +1,18 @@
+
+module crt_ramdac(clk,pixaddr,ven,qpixel,breq,back);
+
+  parameter  ADDR_SIZE = 32;
+  localparam  PIXEL_SIZE = 32;
+  input  clk;
+  input  [(-1)+ADDR_SIZE:0] pixaddr;
+  input  ven;
+  output [(-1)+PIXEL_SIZE:0] qpixel;
+  output breq;
+  input  back;
+
+  
+  always @(posedge clk)  begin
+
+  end
+endmodule
+

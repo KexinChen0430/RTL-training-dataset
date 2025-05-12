@@ -1,0 +1,21 @@
+module control_enable_options(
+    input wire clk,  
+    input wire rst_n,  
+    input wire [7:0] zxuno_addr,  
+    input wire zxuno_regrd,  
+    input wire zxuno_regwr,  
+    input wire [7:0] din,  
+    output reg [7:0] dout,  
+    output reg oe_n,  
+    output wire disable_ay,  
+    output wire disable_turboay,  
+    output wire disable_7ffd,  
+    output wire disable_1ffd,  
+    output wire disable_romsel7f,  
+    output wire disable_romsel1f,  
+    output wire enable_timexmmu,  
+    output wire disable_spisd,  
+    output wire disable_timexscr,  
+    output wire disable_ulaplus,  
+    output wire disable_radas  
+    );

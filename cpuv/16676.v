@@ -1,0 +1,20 @@
+module DP (DOA, DOB, DIA, DIB, BLKSEL, ADA, ADB, WREA, WREB, CLKA, CLKB, CEA, CEB, OCEA, OCEB, RESETA, RESETB); 
+parameter READ_MODE0 = 1'b0; 
+parameter READ_MODE1 = 1'b0; 
+parameter WRITE_MODE0 = 2'b00; 
+parameter WRITE_MODE1 = 2'b00; 
+parameter BIT_WIDTH_0 = 16; 
+parameter BIT_WIDTH_1 = 16; 
+parameter BLK_SEL = 3'b000; 
+parameter RESET_MODE = "SYNC"; 
+parameter INIT_RAM_00 = 256'h0; 
+output [15:0] DOA, DOB; 
+input [15:0] DIA, DIB; 
+input [2:0] BLKSEL; 
+input [13:0] ADA, ADB; 
+input WREA, WREB; 
+input CLKA, CLKB; 
+input CEA, CEB; 
+input OCEA, OCEB; 
+input RESETA, RESETB; 
+endmodule 

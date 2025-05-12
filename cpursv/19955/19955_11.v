@@ -1,0 +1,1 @@
+Slist(Satom(Mod) Slist(Satom(Mul) Slist(Satom(Atom) Slist(Satom(Int) Satom(1))) Slist(Satom(Mod) Slist(Satom(Atom) Slist(Satom(Int) Satom(1))) Slist(Satom(Atom) Slist(Satom(Int) Satom(8)))) Slist(Satom(Atom) Slist(Satom(Int) Satom(8)))))

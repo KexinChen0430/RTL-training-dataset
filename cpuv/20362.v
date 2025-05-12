@@ -1,0 +1,20 @@
+module mips_cop0    (
+                    input clk, 
+                    input rst, 
+                    input[4:0]    rd_addr, 
+                    output[31:0]  rd_data, 
+                    output[31:0]  rd_epc, 
+                    output        rd_int, 
+                    output        rd_status_exl, 
+                    input[4:0]    wr_addr, 
+                    input         wr_en, 
+                    input[31:0]   wr_data, 
+                    input         wr_status_exl_reset, 
+                    input         wr_status_exl_set, 
+                    input         wr_cause_en, 
+                    input         wr_cause_bd, 
+                    input[5:0]    wr_cause_int, 
+                    input[3:0]    wr_cause_excode, 
+                    input         wr_badvaddr_en, 
+                    input[31:0]   wr_badvaddr_data 
+                    );

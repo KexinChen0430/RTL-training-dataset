@@ -1,0 +1,7 @@
+
+module PCPlus4(input  wire [31:0] pc,
+               output wire [31:0] pc_plus_four);
+
+  assign pc_plus_four = 4+pc;
+endmodule
+

@@ -1,0 +1,28 @@
+
+module my_video_filter_mul_16ns_32ns_48_3_Mul3S_0(clk,ce,a,b,p);
+
+  input  clk;
+  input  ce;
+  input  [(0-1)+16:0] a;
+  input  [(0-1)+32:0] b;
+  output [(0-1)+48:0] p;
+  reg  [(0-1)+16:0] a_reg0;
+  reg  [(0-1)+32:0] b_reg0;
+  wire [(0-1)+48:0] tmp_product;
+  reg  [(0-1)+48:0] buff0;
+
+  assign p = buff0;
+  assign tmp_product = a_reg0*b_reg0;
+  
+  always @(posedge clk)
+      begin
+        if (ce) 
+          begin
+            a_reg0 <= a;
+            b_reg0 <= b;
+            buff0 <= tmp_product;
+          end
+          
+      end
+endmodule
+

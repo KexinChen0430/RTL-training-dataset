@@ -1,0 +1,1 @@
+module spi(clk, rst_, data, addr, cs_, oe_, we_, spi_ncs, spi_sclk, spi_mosi, spi_miso);
